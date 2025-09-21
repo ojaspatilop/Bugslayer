@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Site Inspector</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; width: 400px; min-height: 100px; padding: 15px; background-color: #f4f6f8; }
+    h1 { text-align: center; color: #1e293b; margin-top: 0; font-size: 20px; }
+    .button-group { display: flex; gap: 10px; margin-top: 15px; }
+    button {
+      flex-grow: 1; padding: 10px; font-size: 14px; font-weight: 500;
+      background-color: #64748b; color: white; border: none; border-radius: 8px;
+      cursor: pointer; transition: background-color 0.2s;
+    }
+    button:hover { background-color: #475569; }
+    button:disabled { background-color: #94a3b8; cursor: not-allowed; }
+    #results-container, #deep-scan-results { margin-top: 10px; border-top: 1px solid #d1d5db; padding-top: 10px; }
+    .result-item { padding: 10px; border-radius: 6px; margin-bottom: 8px; background-color: #ffffff; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+    .status-high { border-left: 4px solid #ef4444; }
+    .status-medium { border-left: 4px solid #f97316; }
+    .status-low { border-left: 4px solid #eab308; }
+    .status-info { border-left: 4px solid #3b82f6; }
+    .status-vulnerable { border-left: 4px solid #dc2626; }
+    .vuln-title { font-weight: 600; color: #374151; }
+    .vuln-details { font-size: 14px; color: #6b7280; margin-top: 4px; word-wrap: break-word; }
+  </style>
+</head>
+<body>
+  <h1>Project BugSlayer</h1>
+  <div id="results-container"><p>Loading site audit report...</p></div>
+  <div class="button-group">
+      <button id="rescan-button">Rescan Site Audit</button>
+      <button id="deep-scan-button">Deep Scan Inputs (ML)</button>
+  </div>
+  <div id="deep-scan-results"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

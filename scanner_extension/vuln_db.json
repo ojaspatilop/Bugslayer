@@ -1,0 +1,40 @@
+{
+  "servers": [
+    {
+      "name": "Apache",
+      "vulnerabilities": [
+        { "severity": "High", "details": "Older versions are vulnerable to Path Traversal and RCE (CVE-2021-41773)." }
+      ]
+    },
+    { "name": "nginx", "vulnerabilities": [ { "severity": "Medium", "details": "Older versions have known vulnerabilities related to request smuggling." } ] },
+    { "name": "IIS", "vulnerabilities": [ { "severity": "Medium", "details": "Older versions have potential vulnerabilities related to buffer overflows." } ] }
+  ],
+  "js_libraries": {
+    "jquery": [
+      {
+        "up_to_version": "3.4.1",
+        "severity": "High",
+        "details": "jQuery versions up to 3.4.1 are vulnerable to Cross-Site Scripting (XSS)."
+      }
+    ],
+    "bootstrap": [
+      {
+        "up_to_version": "4.3.1",
+        "severity": "High",
+        "details": "Bootstrap versions up to 4.3.1 have a Cross-Site Scripting (XSS) vulnerability."
+      },
+       {
+        "up_to_version": "5.1.2",
+        "severity": "Medium",
+        "details": "Bootstrap versions up to 5.1.2 have a Cross-Site Scripting (XSS) vulnerability in the Tooltip component."
+      }
+    ],
+    "angular.js": [
+       {
+        "up_to_version": "1.8.2",
+        "severity": "High",
+        "details": "All versions of AngularJS are now end-of-life and unsupported. They may contain unpatched security vulnerabilities."
+      }
+    ]
+  }
+}
